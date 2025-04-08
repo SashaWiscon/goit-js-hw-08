@@ -1,6 +1,7 @@
 // Add imports above this line
 import { galleryItems } from './gallery-items';
 import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 // Change code below this line
 
 console.log(galleryItems);
@@ -28,26 +29,33 @@ function onclick(evt) {
     return;
   }
 
-  const instance = basicLightbox.create(
-    `
-   <img src="${evt.target.dataset.source}">;
-`,
-    {
-      onShow: instance => {
-        window.addEventListener('keydown', onEscapeCloseModal);
-      },
-      onClose: instance => {
-        window.removeEventListener('keydown', onEscapeCloseModal);
-      },
-    }
-  );
+  //   const instance = basicLightbox.create(
+  //     `
+  //    <img src="${evt.target.dataset.source}">;
+  // `,
+  //     {
+  //       onShow: instance => {
+  //         window.addEventListener('keydown', onEscapeCloseModal);
+  //       },
+  //       onClose: instance => {
+  //         window.removeEventListener('keydown', onEscapeCloseModal);
+  //       },
+  //     }
+  //   );
 
-  instance.show();
+  //   instance.show();
 
-  function onEscapeCloseModal(event) {
-    if (event.key === 'Escape') {
-      //  console.log("Escape works");
-      instance.close();
-    }
-  }
-}
+  //   function onEscapeCloseModal(event) {
+  //     if (event.key === 'Escape') {
+  //       //  console.log("Escape works");
+  //       instance.close();
+  //     }
+  //   }
+  // }
+
+  const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionPosition: 'top',
+    captionDelay: 250,
+  });
+};
