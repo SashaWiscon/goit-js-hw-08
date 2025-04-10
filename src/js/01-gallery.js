@@ -29,29 +29,7 @@ function onclick(evt) {
     return;
   }
 
-  //   const instance = basicLightbox.create(
-  //     `
-  //    <img src="${evt.target.dataset.source}">;
-  // `,
-  //     {
-  //       onShow: instance => {
-  //         window.addEventListener('keydown', onEscapeCloseModal);
-  //       },
-  //       onClose: instance => {
-  //         window.removeEventListener('keydown', onEscapeCloseModal);
-  //       },
-  //     }
-  //   );
-
-  //   instance.show();
-
-  //   function onEscapeCloseModal(event) {
-  //     if (event.key === 'Escape') {
-  //       //  console.log("Escape works");
-  //       instance.close();
-  //     }
-  //   }
-  // }
+  
 
   const lightbox = new SimpleLightbox('.gallery a', {
     captionsData: 'alt',
