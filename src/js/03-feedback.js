@@ -6,5 +6,5 @@ formEl.addEventListener('input', onFormInput);
 
 function onFormInput(evt) {
     evt.preventDefault();
-    console.log(evt.target.elements.email.value)
+    console.log(evt.currentTarget.name.email.value);
 };
