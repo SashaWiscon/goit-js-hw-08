@@ -29,6 +29,5 @@ player
   });
 
 
-// player.on('play', function () {
-//   console.log('Video is playing!');
-// });
+
+
