@@ -8,12 +8,14 @@ const formData = {};
 formEl.addEventListener('input', throttle(onFormInput, 500));
 formEl.addEventListener('submit', onFormSubmit);
 
+fillTextarea();
+
 function onFormInput(evt) {
   // const formData = {
   //   email: formEl.elements.email.value,
   //   message: formEl.elements.message.value,
   // };
-  // const inputMessage = evt.target.value;
+
  formData.email = formEl.elements.email.value;
  formData.message = formEl.elements.message.value;
 
@@ -28,3 +30,14 @@ function onFormSubmit(evt) {
     localStorage.removeItem(localStorageKey); //очищаем локал 
 };
 
+function fillTextarea() {
+  const savedMessage =  JSON.parse(localStorage.getItem(localStorageKey));
+  //распарсили из хранилища,где была строка, перевели в объект
+  if (savedMessage) {
+       formEl.elements.email.value = savedMessage.email;
+      formEl.elements.message.value = savedMessage.message;
+  } else {
+    formEl.elements.email.value = '';
+    formEl.elements.message.value = '';
+    };
+  }
